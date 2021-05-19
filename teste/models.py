@@ -2,6 +2,12 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+# Post é o nome do nosso modelo. Nós podemos dar
+#  um nome diferente (mas precisamos evitar caracteres
+#  especiais e espaços em branco). Sempre inicie o 
+# nome de uma classe com uma letra em maiúsculo.
+# models.Model significa que o Post é um modelo de Django,
+#  então o Django sabe que ele deve ser salvo no banco de dados.
 class Post(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
